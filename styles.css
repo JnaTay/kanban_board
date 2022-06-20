@@ -67,3 +67,67 @@ body{
 .first-todo:hover{
     opacity: 75%;
 }
+/* ---------------------------------------------------------------------------- */
+.close-form {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+  
+.form {
+    width: 450px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: #fff;
+}
+  
+.form.active {
+    top: 15%;
+}
+  
+.form .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+  
+.form .body {
+    padding: 0.75rem;
+}
+  
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+  
+#overlay.active {
+    display: block;
+}
+  
+#todo_input,
+#todo_submit {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+}
+  
+#todo_submit {
+    background-color: #4caf50;
+    color: #f3f3f3;
+    font-size: 1.25rem;
+    border: none;
+}

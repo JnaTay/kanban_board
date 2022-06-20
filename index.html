@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanban</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    <div class="kanban-container">
-        <div class="status">
-            <h2>To-do</h2>
-            <button id="btn">+ Add Todo</button>
-            <div class="first-todo" draggable="true">
-                Task 1
-                <span class="close">&times;</span>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kanban</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="form" id="todo_form">
+            <div class="header">
+            <div class="title">Add Todo</div>
+            <button class="btn close-form">&times;</button>
+            </div>
+            <div class="body">
+            <input type="text" id="todo_input" />
+            <input type="submit" value="Add Todo" id="todo_submit" />
             </div>
         </div>
-        <div class="status">
-            <h2>In progress</h2>
+    <!-- --------------------------------------------------------------------- -->
+        <div class="kanban-container">
+            <div class="status">
+                <h2>To-do</h2>
+                <button id="btn" data-target="#todo_form">+ Add Todo</button>
+                <div class="first-todo" draggable="true">
+                    Task 1
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+            <div class="status">
+                <h2>In progress</h2>
+            </div>
+            <div class="status">
+                <h2>Completed</h2>
+            </div>
+            <div class="status">
+                <h2>Archive</h2>
+            </div>
         </div>
-        <div class="status">
-            <h2>Completed</h2>
-        </div>
-        <div class="status">
-            <h2>Archive</h2>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+        
+        <!-- add a layer below the todo_form -->
+        <div id="overlay"></div>
+
+        <script src="script.js"></script>
+    </body>
 </html>

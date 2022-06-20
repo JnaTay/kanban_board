@@ -55,3 +55,31 @@ function dragDrop(){
     this.appendChild(draggableTodo);
     console.log("dragDrop");
 }
+
+// --------------------------------------
+const btns = document.querySelectorAll("[data-target]");
+const close_forms = document.querySelectorAll(".close-form");
+const overlay = document.getElementById("overlay");
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelector(btn.dataset.target).classList.add("active");
+    overlay.classList.add("active");
+  });
+});
+
+close_forms.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const forms = btn.closest(".form");
+    forms.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+});
+
+window.onclick = (event) => {
+  if (event.target == overlay) {
+    const forms = document.querySelectorAll(".form");
+    forms.forEach((forms) => forms.classList.remove("active"));
+    overlay.classList.remove("active");
+  }
+};
