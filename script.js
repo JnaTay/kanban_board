@@ -116,7 +116,7 @@ function createTodo(){
    // set draggable to true
    todo_div.setAttribute("draggable", "true");
 
-   // the done button("cross"), upon finishing a task
+   // create the done button("cross")
    const span = document.createElement("span");
    const span_text = document.createTextNode("\u00D7");
    span.classList.add("close");
@@ -125,17 +125,31 @@ function createTodo(){
    // add span to todo list
    todo_div.appendChild(span);
 
-   console.log(todo_div);
+   //console.log(todo_div);
 
    //add to To-do column
    Todo_status.appendChild(todo_div);
 
-   // allow newly add to-do to be draggable
+   // close button upon finishing the task
+   span.addEventListener("click", ()=> {
+    span.parentElement.style.display = "none";
+  });
+
+   // allow newly added to-do to be draggable
    todo_div.addEventListener("dragstart", dragStart);
    todo_div.addEventListener("dragend", dragEnd);
 
+   document.getElementById("todo_input").value = "";
    // close form and overlay when todo is created
    todo_form.classList.remove("active");
    overlay.classList.remove("active");
 
 }
+
+// close button upon finishing the task
+const close_btn = document.querySelectorAll(".close");
+close_btn .forEach(btn => {
+  btn.addEventListener("click", ()=> {
+    btn.parentElement.style.display = "none";
+  });
+})
