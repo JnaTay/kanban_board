@@ -117,7 +117,8 @@ body{
 #overlay.active {
     display: block;
 }
-  
+
+/* css for input text-box and submit button in the form */
 #todo_input,
 #todo_submit {
     padding: 0.5rem 1rem;
