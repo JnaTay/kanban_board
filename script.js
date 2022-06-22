@@ -130,6 +130,10 @@ function createTodo(){
    //add to To-do column
    Todo_status.appendChild(todo_div);
 
+   // allow newly add to-do to be draggable
+   todo_div.addEventListener("dragstart", dragStart);
+   todo_div.addEventListener("dragend", dragEnd);
+
    // close form and overlay when todo is created
    todo_form.classList.remove("active");
    overlay.classList.remove("active");
